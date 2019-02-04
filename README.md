@@ -18,6 +18,7 @@ C-Note-Summary
 创建变量      TYPE varName
 验证结论       printf
 ```
+(进程结构)[C-language/linux的进程结构.png]
 ### 1.2 auto/static/register属性关键字
 - auto 表明变量是在栈上分配空间的
 - 全局变量是在程序静态区分配空间的
