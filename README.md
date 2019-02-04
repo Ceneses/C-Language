@@ -13,9 +13,9 @@ C-Note-Summary
 * 自定义类型
 * 自己创建变量
 ```
-Struct Type{
-
-}VarName
+自定义数据类型 typedef 模子 TYPE 
+创建变量      TYPE varName
+验证结论       printf
 ```
 ## 专题二-符号的技巧
 ## 专题三-编译预处理
