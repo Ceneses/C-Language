@@ -1,6 +1,7 @@
 # C-language
 C-Note-Summary
 ## 专题一-关键字的秘密
+### 1.1数据类型&变量
 ```
 * 数据类型可以理解为固定内存大小的别名
 * 数据类型是创建类型的模子
@@ -17,6 +18,8 @@ C-Note-Summary
 创建变量      TYPE varName
 验证结论       printf
 ```
+### 1.2 auto/static/register属性关键字
+
 ## 专题二-符号的技巧
 ## 专题三-编译预处理
 ## 专题四-指针和数组
