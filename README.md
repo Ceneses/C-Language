@@ -27,6 +27,41 @@ C-Note-Summary
 - static修饰的全局变量作用域只是声明的文件中。
 - static修饰的函数作用域只是声明的文件中。
 - register修饰的是寄存器的值
+### 1.3 分支语句if/switch
+- if 语句中bool型变量应该直接出现于条件中，不要进行比较
+- 普通变量和0值比较时，0值应该出现在比较符号左边
+- float型变量不能直接进行0值比较，需要定义精度
+```
+bool b =TRUE
+if(b)
+{
+  //statement 1
+}
+else
+{
+  //statement 2
+}
+
+int i =1;
+if(0==i)
+{
+  //statement 1
+}
+else
+{
+  //statement 2
+}
+#define EPSINON 0.00001
+float f=0.0;
+if((-EPSION<=f)&&(f<=EPISON))
+{
+//statement 1
+}
+else
+{
+//statement 2
+}
+```
 ## 专题二-符号的技巧
 ## 专题三-编译预处理
 ## 专题四-指针和数组
