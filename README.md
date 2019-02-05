@@ -70,5 +70,12 @@ else
 在指针声明的时候：*号所声明的变量是指针
 在指针使用的过程中：*号是读取内存空间的值
 ```
+```
+//another file
+char *p="HelloWorld";
+//test.c
+extern char p[];
+printf("%s\n",(char*)(*((unsigned int*)p)));
+```
 ## 专题五-内存管理的艺术
 ## 专题六-函数
