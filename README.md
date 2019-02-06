@@ -78,4 +78,6 @@ extern char p[];
 printf("%s\n",(char*)(*((unsigned int*)p)));
 ```
 ## 专题五-内存管理的艺术
+### 5.1内存管理艺术
+
 ## 专题六-函数
