@@ -77,7 +77,7 @@ char *p="HelloWorld";
 extern char p[];
 printf("%s\n",(char*)(*((unsigned int*)p)));
 ```
-## 专题五-内存管理的艺术
+## 专题五-内存管理的艺术[链接](https://zhuanlan.zhihu.com/p/55241632)
 ![C语言内存模型图](https://github.com/Ceneses/C-language/blob/master/C%E8%AF%AD%E8%A8%80%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.jpg)
 ### 5.1 C语言运行区域
 - 内存大致分为四个数据区：常量区,全局数据区(静态区),堆区，栈区
@@ -88,5 +88,34 @@ printf("%s\n",(char*)(*((unsigned int*)p)));
  指针 str 本身存储在全局数据区或者栈上(函数内) */
 char *str = "hello world";
 ```
-
+- **全局数据区**
+> 存储了全部的全局变量，和所有被 static 修饰的变量（包括全局和局部），其特点是生命周期很长（为一次程序的运行过程）并且只被初始化一次。
+```
+int global = 2;   // 存在全局数据区   
+int main(int argc, char *argv[]){ 
+      static int static_global = 1; // 静态局部变量也是存在全局数据区    
+      int local = 2;                //  存在栈上，见下   
+      return 0;
+}
+```
+- **栈区**
+> 存储了所有自动存储（不加任何存储类型关键字( static 等)修饰或被 auto 修饰）的局部变量，其特点是生命周期很短，仅仅是该变量所在函数的一次调用过程, 函数被调用时被自动分配并在函数返回后回收
+```
+// num 和 localnum都是分配在栈上   
+int func(int num){      
+     int localnum = -1;     
+     return localnum * num;   
+} 
+```
+> 很多 C/C++ 初学者容易犯的一个错误就是返回局部变量的指针或者指针，但是这个指针所指向的局部变量在函数返回后就会被自动回收(退栈)。所以当对返回的局部变量的指针被dereference时也会发生无法预料的错误。
+- **堆区 **
+> 是由操作系统负责维护的大片内存池，使用时需手动申请, 一般是调用 malloc 家族函数进行动态内存分配，但使用完毕后需要使用 free 手动释放，否则会造成严重的内存泄漏。所有分配的内存当该进程退出后就会被操作系统回收，但是对于需要长期运行的服务器程序来说，就必须保证内存泄漏尽量少(完全没有基本不可能，除非程序很简单)。
+```
+int *p = (int*)malloc(100 * sizeof(int));   
+for(int i = 0; i < 100; i++){ 
+        p[i] = i;      
+}  
+free(p);
+p = NULL;
+```
 ## 专题六-函数
