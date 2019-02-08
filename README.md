@@ -78,7 +78,7 @@ extern char p[];
 printf("%s\n",(char*)(*((unsigned int*)p)));
 ```
 ## 专题五-内存管理的艺术
-C语言内存模型图
+![C语言内存模型图](https://github.com/Ceneses/C-language/blob/master/C%E8%AF%AD%E8%A8%80%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B.jpg)
 ### 5.1 C语言运行区域
 - 内存大致分为四个数据区：常量区,全局数据区(静态区),堆区，栈区
 - **常量区**
